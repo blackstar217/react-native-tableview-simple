@@ -25,8 +25,6 @@ class Section extends Component {
       allowFontScaling,
       children,
       hideSeparator,
-      sectionPaddingBottom,
-      sectionPaddingTop,
       sectionTintColor,
       separatorInsetLeft,
       separatorInsetRight,
@@ -42,18 +40,8 @@ class Section extends Component {
       section: [
         styles.section,
         {
-          backgroundColor: sectionTintColor,
-          paddingBottom: sectionPaddingBottom,
-          paddingTop: sectionPaddingTop,
+          backgroundColor: sectionTintColor
         },
-      ],
-      sectionheader__text: [
-        styles.sectionheader__text,
-        { color: headerTextColor },
-      ],
-      sectionfooter__text: [
-        styles.sectionfooter__text,
-        { color: footerTextColor },
       ],
     };
 
@@ -119,25 +107,7 @@ class Section extends Component {
 const styles = StyleSheet.create({
   section: {},
   section_inner: {
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: '#C8C7CC',
-  },
-  sectionheader: {
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingBottom: 5,
-  },
-  sectionheader__text: {
-    fontSize: 13,
-  },
-  sectionfooter: {
-    paddingLeft: 15,
-    paddingRight: 15,
-    paddingTop: 10,
-  },
-  sectionfooter__text: {
-    fontSize: 13,
   },
 });
 
@@ -145,8 +115,6 @@ Section.propTypes = {
   allowFontScaling: PropTypes.bool,
   children: PropTypes.node,
   hideSeparator: PropTypes.bool,
-  sectionPaddingBottom: PropTypes.number,
-  sectionPaddingTop: PropTypes.number,
   sectionTintColor: PropTypes.string,
   separatorInsetLeft: PropTypes.number,
   separatorInsetRight: PropTypes.number,
@@ -157,8 +125,6 @@ Section.defaultProps = {
   allowFontScaling: true,
   children: null,
   hideSeparator: false,
-  sectionPaddingBottom: 15,
-  sectionPaddingTop: 15,
   sectionTintColor: '#EFEFF4',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
