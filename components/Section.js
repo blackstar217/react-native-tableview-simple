@@ -155,11 +155,9 @@ class Section extends Component {
 
     return (
       <View style={_styles.section}>
-        {headerComponent || renderHeader()}
         <View style={styles.section_inner}>
           {React.Children.map(children, renderChild)}
         </View>
-        {footerComponent || renderFooter()}
       </View>
     );
   }
