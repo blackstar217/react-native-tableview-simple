@@ -24,11 +24,7 @@ class Section extends Component {
     const {
       allowFontScaling,
       children,
-      footerComponent,
-      headerComponent,
-      headerTextColor,
       hideSeparator,
-      footerTextColor,
       sectionPaddingBottom,
       sectionPaddingTop,
       sectionTintColor,
@@ -36,9 +32,6 @@ class Section extends Component {
       separatorInsetRight,
       separatorTintColor,
     } = this.props;
-
-    const header = this.props.header ? this.props.header : false;
-    const footer = this.props.footer ? this.props.footer : false;
 
     /**
      * Merge styles with props
@@ -113,46 +106,6 @@ class Section extends Component {
       );
     };
 
-    /**
-     * Render header if defined
-     * @return {View} View with Text
-     */
-    const renderHeader = () => {
-      if (header) {
-        return (
-          <View style={styles.sectionheader}>
-            <Text
-              allowFontScaling={allowFontScaling}
-              style={_styles.sectionheader__text}
-            >
-              {header}
-            </Text>
-          </View>
-        );
-      }
-      return undefined;
-    };
-
-    /**
-     * Render footer if defined
-     * @return {View} View with Text
-     */
-    const renderFooter = () => {
-      if (footer) {
-        return (
-          <View style={styles.sectionfooter}>
-            <Text
-              allowFontScaling={allowFontScaling}
-              style={_styles.sectionfooter__text}
-            >
-              {footer}
-            </Text>
-          </View>
-        );
-      }
-      return undefined;
-    };
-
     return (
       <View style={_styles.section}>
         <View style={styles.section_inner}>
@@ -191,12 +144,6 @@ const styles = StyleSheet.create({
 Section.propTypes = {
   allowFontScaling: PropTypes.bool,
   children: PropTypes.node,
-  footerComponent: PropTypes.element,
-  headerComponent: PropTypes.element,
-  footer: PropTypes.string,
-  footerTextColor: PropTypes.string,
-  header: PropTypes.string,
-  headerTextColor: PropTypes.string,
   hideSeparator: PropTypes.bool,
   sectionPaddingBottom: PropTypes.number,
   sectionPaddingTop: PropTypes.number,
@@ -209,16 +156,10 @@ Section.propTypes = {
 Section.defaultProps = {
   allowFontScaling: true,
   children: null,
-  footerComponent: null,
-  headerComponent: null,
-  footer: null,
-  header: null,
-  headerTextColor: '#6D6D72',
   hideSeparator: false,
   sectionPaddingBottom: 15,
   sectionPaddingTop: 15,
   sectionTintColor: '#EFEFF4',
-  footerTextColor: '#6d6d72',
   separatorInsetLeft: 15,
   separatorInsetRight: 0,
   separatorTintColor: '#C8C7CC',
